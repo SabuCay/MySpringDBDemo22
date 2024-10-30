@@ -24,12 +24,17 @@ public class PersonRepo {
         template.update(sql, p.getId(), p.getFirst_name(), p.getLast_name());
     }
     public Person findPersonById(int id){
-        return null;
+        String sql = "SELECT * FROM person WHERE id = ?";
+        RowMapper<Person> rowMapper = new BeanPropertyRowMapper<>(Person.class);
+        Person p = template.queryForObject(sql, rowMapper, id);
+        return p;
     }
     public Boolean deletePerson(int id){
-        return null;
+        String sql = "DELETE FROM person WHERE id = ?";
+        return template.update(sql, id) > 0;
     }
-    public void updatePerson(int id, Person p){
-
+    public void updatePerson(Person p){
+        String sql = "UPDATE person SET first_name = ?, last_name = ? WHERE id = ?";
+        template.update(sql, p.getFirst_name(), p.getLast_name(), p.getId());
     }
 }

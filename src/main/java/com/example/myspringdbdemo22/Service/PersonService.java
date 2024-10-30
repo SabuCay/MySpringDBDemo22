@@ -24,7 +24,7 @@ public class PersonService {
     public Boolean deletePerson(int id){
         return personRepo.deletePerson(id);
     }
-    public void updatePerson(int id, Person p){
-        personRepo.updatePerson(id, p);
+    public void updatePerson(Person p){
+        personRepo.updatePerson(p);
     }
 }

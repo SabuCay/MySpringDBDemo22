@@ -18,6 +18,7 @@
                 <th>Id</th>
                 <th>First name</th>
                 <th>Last name</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +26,17 @@
                 <td th:text="${person.id}"/>
                 <td th:text="${person.first_name}"/>
                 <td th:text="${person.last_name}"/>
+                <td>
+                    <a th:href="@{'/viewOne/'+${person.id}}">
+                        <button class="btn-viewOne" id="btn-viewOne">View a person</button>
+                    </a>
+                    <a th:href="@{'/deleteOne/'+${person.id}}">
+                        <button class="btn-deleteOne" id="btn-deleteOne">Delete a person</button>
+                    </a>
+                    <a th:href="@{'/updateOne/'+${person.id}}">
+                        <button class="btn-updateOne" id="btn-updateOne">Update a person</button>
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>

@@ -27,3 +27,12 @@ tr:nth-child(even){
     margin-bottom: 10px;
     background-color: green;
 }
+#btn-viewOne{
+    background-color: #4CAF50;
+}
+#btn-deleteOne{
+    background-color: red;
+}
+#btn-updateOne{
+    background-color: green;
+}
